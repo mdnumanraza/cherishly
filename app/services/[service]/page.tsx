@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 import { GradientHeading } from "@/app/components/ui/GradientHeading"
-import { GradientButton } from "@/app/components/ui/GradientButton"
+import  GradientButton  from "@/app/components/ui/GradientButton"
 import { Gallery } from "@/app/components/Gallery"
 import { ServiceCard } from "@/app/components/ServiceCard"
 

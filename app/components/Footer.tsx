@@ -1,4 +1,18 @@
+"use client"
+
+import { useState, useEffect } from "react"
 import Link from "next/link"
+import Image from "next/image"
+import { useTheme } from "next-themes"
+
+const [mounted, setMounted] = useState(false)
+const { theme, setTheme } = useTheme()
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  const logoSrc = mounted && theme === "dark" ? "/logo1.png" : "/logo2.png"
+
 
 export default function Footer() {
   return (
@@ -6,7 +20,11 @@ export default function Footer() {
       <div className="container mx-auto px-6 py-8">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="text-center md:text-left mb-4 md:mb-0">
-            <h3 className="text-xl font-bold text-gray-800 dark:text-white">Cherishly.in</h3>
+          <Link href="/" className="flex items-center">
+            <div className="relative w-40 h-12">
+              <Image src={logoSrc} alt="Cherishly.in" fill className="object-contain" priority />
+            </div>
+          </Link>
             <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">Celebrate Your Special Moments with Us</p>
           </div>
           <div className="flex flex-wrap justify-center md:justify-end space-x-4">

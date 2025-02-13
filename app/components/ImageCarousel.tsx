@@ -17,7 +17,7 @@ export function ImageCarousel({ images }: ImageCarouselProps) {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % images.length)
-    }, 5000)
+    }, 3000)
     return () => clearInterval(timer)
   }, [images.length])
 
@@ -30,7 +30,7 @@ export function ImageCarousel({ images }: ImageCarouselProps) {
   }
 
   return (
-    <div className="relative w-full h-[400px] overflow-hidden rounded-xl">
+    <div className="relative w-full h-[600px] overflow-hidden rounded-xl">
       <AnimatePresence initial={false} custom={currentIndex}>
         <motion.img
           key={currentIndex}

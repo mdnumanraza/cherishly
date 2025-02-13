@@ -57,12 +57,12 @@ export function StickyMenu() {
               <ArrowUp className="w-6 h-6" />
             </button>
           )}
-          <button
+          {/* <button
             onClick={() => setIsOpen(false)}
             className="p-3 bg-red-500 text-white rounded-full shadow-lg hover:bg-red-600 transition-colors"
           >
             <X className="w-6 h-6" />
-          </button>
+          </button> */}
         </motion.div>
       )}
     </AnimatePresence>

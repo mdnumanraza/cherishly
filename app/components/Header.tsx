@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { useTheme } from "next-themes"
@@ -17,6 +17,13 @@ const services = [
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
   const { theme, setTheme } = useTheme()
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  const logoSrc = mounted && theme === "dark" ? "/logo1.png" : "/logo2.png"
 
   return (
     <header className="bg-white dark:bg-gray-800 shadow-md">
@@ -24,7 +31,7 @@ export default function Header() {
         <div className="flex justify-between items-center">
           <Link href="/" className="flex items-center">
             <div className="relative w-40 h-12">
-              <Image src="/logo.png" alt="Cherishly.in" fill className="object-contain" priority />
+              <Image src={logoSrc} alt="Cherishly.in" fill className="object-contain" priority />
             </div>
           </Link>
           <div className="hidden md:flex space-x-4">
@@ -120,4 +127,3 @@ export default function Header() {
     </header>
   )
 }
-
