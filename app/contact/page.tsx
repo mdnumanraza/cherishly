@@ -2,8 +2,8 @@
 
 import { useState } from "react"
 import { motion } from "framer-motion"
-import { GradientHeading } from "../components/ui/GradientHeading"
-import { GradientButton } from "../components/ui/GradientButton"
+import GradientHeading  from "../components/ui/GradientHeading"
+import GradientButton  from "../components/ui/GradientButton"
 import { Phone, Mail, MapPin, MessageCircle } from "lucide-react"
 
 export default function ContactPage() {
